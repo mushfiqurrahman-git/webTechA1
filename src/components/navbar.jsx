@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+//phosphor package react for icons
 import {ShoppingCart} from 'phosphor-react'
 import "./navbar.css";
 

@@ -1,5 +1,9 @@
 import './App.css';
+
+//react router dom for routing 
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+
+//importing components
 import { Navbar } from './components/navbar';
 import { Shop } from './pages/shop/shop';
 import { Cart } from './pages/cart/cart';

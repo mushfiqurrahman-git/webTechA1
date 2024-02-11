@@ -3,6 +3,7 @@ import product2 from "./assets/iPhone11.jpg";
 import product3 from "./assets/iPhone12.jpg";
 import product4 from "./assets/iPhone13.jpg";
 import product5 from "./assets/iPhone14.jpg";
+//declaring the PRODUCTS array
 export const PRODUCTS = [
     {
         id:1,

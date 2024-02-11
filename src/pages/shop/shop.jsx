@@ -1,6 +1,8 @@
 import React from 'react';
+//importing PRODUCTS json
 import { PRODUCTS } from '../../products';
 import { Product } from "./product";
+//importing shop css
 import "./shop.css"; 
 
 export const Shop = () => {
@@ -12,6 +14,7 @@ export const Shop = () => {
             <div className="products">
                 {" "}
                 {PRODUCTS.map((product) => (
+                    //map function to populate product data
                     <Product data={product} />
                 ))}
             </div>
