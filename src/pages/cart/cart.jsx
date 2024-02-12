@@ -10,9 +10,7 @@ import Marquee from "react-fast-marquee";
 
 
 export const Cart = () => {
-    <Marquee>
-        I can be a React component, multiple React components, or just some text.
-    </Marquee>
+
     const [state, setState] = useState('idle');
     const onClickHandler = () => {
         setState('loading');
@@ -23,19 +21,29 @@ export const Cart = () => {
         }, 2000);
     };
     const { cartItems, getTotalCartAmount } = useContext(ShopContext);
+
+
     const totalAmount = getTotalCartAmount()
     //useNavigate hooks for navigation between pages
     const navigate = useNavigate()
+
     return (
         <div className='cart'>
-            <div>
+            <div >
+                
+                {totalAmount>2500?//if total is more than 2500 than cus eligible for free shipping
                 <Marquee>
-                    <p>Add 5 or more items to get free shipping</p>
+                    <p className='freeShipping'>Congratulations!! You are eligible for free shipping !!</p>
                 </Marquee>
+                :
+                <Marquee>
+                <p>Buy products worth $2500 or more items to get free shipping</p>
+            </Marquee>
+                }
+            </div>
                 <h1>
                     Your Cart Items
                 </h1>
-            </div>
             <div className='cartItems'>
                 {PRODUCTS.map((product) => {
                     //mapping if product id is not equal to zero
@@ -58,7 +66,6 @@ export const Cart = () => {
                 </div>
             ) : (//if total amount is not than greater than 0 then show your cart is empty
                 <h1>Your Cart is Empty</h1>
-
             )}
         </div>
     );

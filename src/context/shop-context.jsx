@@ -3,6 +3,7 @@ import { PRODUCTS } from '../products';
 
 export const ShopContext = createContext(null);
 
+//default cart which is set to 0
 const getDefaultCart = () => {
     let cart = {}
     for (let i = 1; i < PRODUCTS.length + 1; i++) {
@@ -14,11 +15,13 @@ const getDefaultCart = () => {
 export const ShopContextProvider = (props) => {
     const [cartItems, setCartItems] = useState(getDefaultCart());
 
+
     const getTotalCartAmount =()=>{
         let totalAmount= 0;
         for(const item in cartItems){
             if(cartItems[item]>0){
                 let itemInfo =PRODUCTS.find((product)=>product.id==Number(item));
+                //calculating total price
                 totalAmount += cartItems[item]*itemInfo.price
             }
         }

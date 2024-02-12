@@ -8,6 +8,7 @@ export const CartItem = (props) => {
     //update cart function for taking the input value and implemented to update  product in cart
     const { id, productName, price, productImage } = props.data;
     const { cartItems, addToCart, removeFromCart,updateCartItemCount } = useContext(ShopContext);
+
     return (
         <div className='cartItem'>
             <img src={productImage} />

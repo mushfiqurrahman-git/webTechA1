@@ -14,7 +14,7 @@ export const Shop = () => {
             <div className="products">
                 {" "}
                 {PRODUCTS.map((product) => (
-                    //map function to populate product data
+                    //map function to populate product
                     <Product data={product} />
                 ))}
             </div>
